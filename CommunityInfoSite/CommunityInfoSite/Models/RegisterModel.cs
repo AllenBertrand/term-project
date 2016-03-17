@@ -16,6 +16,6 @@ namespace BookStoreDemo1.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public string Name { get; set; }
+        public string ForumNick { get; set; }
     }
 }

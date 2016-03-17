@@ -10,8 +10,8 @@ namespace CommunityInfoSite.Models
     {
         protected override void Seed(CommunityForumContext context)
         {                                                   //context is passed in
-            MemberUser memberAllen = new MemberUser { Name = "AllenB", Email = "Bertrandallen@gmail.com" };
-            MemberUser memberLee = new MemberUser { Name = "LeeB", Email = "BertrandLee@gmail.com" };
+            Member memberAllen = new Member { Name = "AllenB", Email = "Bertrandallen@gmail.com" };
+            Member memberLee = new Member { Name = "LeeB", Email = "BertrandLee@gmail.com" };
             Message message1 = new Message
             {
                 Subject = "Hey",

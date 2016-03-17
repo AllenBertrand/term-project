@@ -8,13 +8,10 @@ namespace CommunityInfoSite.Models
 {
     public class MemberUser : IdentityUser
     {
-        //THIS IS REPLACING MEMBER CLASS
-        public List<Message> messages = new List<Message>();
+        //username, basically
+        //THIS IS AN OBSOLETE CLASS
+        public string ForumNick { get; set; }
 
-        public List<Message> Messages { get { return messages; } }
-
-        public int MemberId { get; set; }
-        public string Name { get; set; }
-        //public string Email { get; set; }
+        public Member member { get; set; }
     }
 }

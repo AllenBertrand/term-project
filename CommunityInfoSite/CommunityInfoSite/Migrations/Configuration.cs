@@ -35,18 +35,21 @@ namespace CommunityInfoSite.Migrations
             UserManager<MemberUser> userManager = new UserManager<MemberUser>(
               new UserStore<MemberUser>(context));
 
-            MemberUser memberAllen = new MemberUser { Name = "AllenB", Email = "Bertrandallen@gmail.com" };
-            MemberUser memberLee = new MemberUser { Name = "LeeB", Email = "BertrandLee@gmail.com" };
+            Member memberAllen = new Member { Name = "AllenB", Email = "Bertrandallen@gmail.com" };
+            Member memberLee = new Member { Name = "LeeB", Email = "BertrandLee@gmail.com" };
 
-            var resultAllen = userManager.Create(memberAllen, "passwordAllen");
-            var resultLee = userManager.Create(memberLee, "passwordLee");
+            MemberUser allenMember = new MemberUser { member = memberAllen };
+            MemberUser leeMember = new MemberUser { member = memberAllen };
+
+            var resultAllen = userManager.Create(allenMember, "passwordAllen");
+            var resultLee = userManager.Create(leeMember, "passwordLee");
 
             context.Roles.Add(new IdentityRole() { Name = "Admin" });
             context.Roles.Add(new IdentityRole() { Name = "User" });
             context.SaveChanges();
 
-            userManager.AddToRole(memberAllen.Id, "Admin");
-            userManager.AddToRole(memberAllen.Id, "User");
+            userManager.AddToRole(allenMember.Id, "Admin");
+            userManager.AddToRole(leeMember.Id, "User");
 
             Message message1 = new Message
             {

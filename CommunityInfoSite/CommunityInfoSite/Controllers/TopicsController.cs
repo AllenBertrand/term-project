@@ -15,6 +15,7 @@ namespace CommunityInfoSite.Controllers
         private CommunityForumContext db = new CommunityForumContext();
 
         // GET: Topics
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Index()
         {
             var topics = new List<Topic>();
@@ -35,6 +36,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Topics/Details/5
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -50,6 +52,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Topics/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -60,6 +63,7 @@ namespace CommunityInfoSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "TopicId,TopicName")] Topic topic)
         {
             if (ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Topics/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +97,7 @@ namespace CommunityInfoSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "TopicId,TopicName")] Topic topic)
         {
             if (ModelState.IsValid)
@@ -104,6 +110,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Topics/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +128,7 @@ namespace CommunityInfoSite.Controllers
         // POST: Topics/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Topic topic = db.Topics.Find(id);

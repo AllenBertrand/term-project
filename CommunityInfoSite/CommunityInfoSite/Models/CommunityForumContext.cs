@@ -24,7 +24,7 @@ namespace CommunityInfoSite.Models
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
 
-        public DbSet<MemberUser> Members { get; set; }
+        public DbSet<Member> Members { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Topic> Topics { get; set; }
     }

@@ -15,6 +15,7 @@ namespace CommunityInfoSite.Controllers
         private CommunityForumContext db = new CommunityForumContext();
 
         // GET: Messages
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Index()
         {
             var messages = new List<MessageViewModel>();
@@ -41,6 +42,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Messages/Details/5
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -67,7 +69,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Messages/Create
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Create()
         {
             ViewBag.TopicNames = new SelectList(db.Topics.OrderBy(t => t.TopicName), "TopicId", "TopicName");
@@ -79,7 +81,7 @@ namespace CommunityInfoSite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Create([Bind(Include = "MessageId,From,Date,Subject,Body, TopicNames")] MessageViewModel messageVM, int? TopicNames, int? From)
         {
             if (ModelState.IsValid)
@@ -88,7 +90,7 @@ namespace CommunityInfoSite.Controllers
                                where t.TopicId == TopicNames
                                select t).FirstOrDefault();
 
-                MemberUser from = (from f in db.Members
+                Member from = (from f in db.Members
                                where f.MemberId == From
                                select f).FirstOrDefault();
 
@@ -101,7 +103,7 @@ namespace CommunityInfoSite.Controllers
 
                 if (from == null)//make a new member if nothing is returned from searching the DB
                 {
-                    from = new MemberUser() { Name = messageVM.From };
+                    from = new Member() { Name = messageVM.From };
                     db.Members.Add(from);
                 }
 
@@ -133,7 +135,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Messages/Edit/5
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -152,7 +154,7 @@ namespace CommunityInfoSite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Edit([Bind(Include = "MessageId,From,Date,Subject,Body")] Message message)
         {
             if (ModelState.IsValid)
@@ -165,7 +167,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Messages/Delete/5
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -182,7 +184,7 @@ namespace CommunityInfoSite.Controllers
 
         // POST: Messages/Delete/5
         [HttpPost, ActionName("Delete")]
-        [Authorize]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult DeleteConfirmed(int id)
         {
             Message message = db.Messages.Find(id);
@@ -192,13 +194,14 @@ namespace CommunityInfoSite.Controllers
         }
 
         //GET SEARCH
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Search()
         {
             return View();
         }
 
         //POST SEARCH
-        [HttpPost]
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Search(string searchTerm)
         {
             List<MessageViewModel> messageVMs = new List<MessageViewModel>();

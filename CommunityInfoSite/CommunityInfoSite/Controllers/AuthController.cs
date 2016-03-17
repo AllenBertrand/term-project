@@ -81,7 +81,7 @@ namespace CommunityInfoSite.Controllers
             var user = new MemberUser
             {
                 UserName = model.Email,
-                Name = model.Name
+                ForumNick = model.ForumNick
             };
 
             var result = userManager.Create(user, model.Password);

@@ -17,14 +17,14 @@ namespace CommunityInfoSite.Controllers
         // GET: Members
         public ActionResult Index()
         {
-            var members = new List<MemberUser>();
+            var members = new List<Member>();
 
             var tempMembers = from member in db.Members
                       select member;
             
-            foreach (MemberUser m in tempMembers)
+            foreach (Member m in tempMembers)
             {
-                var memberTemp = new MemberUser();
+                var memberTemp = new Member();
                 memberTemp.Email = m.Email;
                 memberTemp.MemberId = m.MemberId;
                 memberTemp.Name = m.Name;
@@ -42,7 +42,7 @@ namespace CommunityInfoSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MemberUser member = db.Members.Find(id);
+            Member member = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -51,6 +51,7 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Members/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -61,7 +62,7 @@ namespace CommunityInfoSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberId,Name,Email")] MemberUser member)
+        public ActionResult Create([Bind(Include = "MemberId,Name,Email")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -74,13 +75,14 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Members/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MemberUser member = db.Members.Find(id);
+            Member member = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -93,7 +95,8 @@ namespace CommunityInfoSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MemberId,Name,Email")] MemberUser member)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit([Bind(Include = "MemberId,Name,Email")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -105,13 +108,14 @@ namespace CommunityInfoSite.Controllers
         }
 
         // GET: Members/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MemberUser member = db.Members.Find(id);
+            Member member = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -122,9 +126,10 @@ namespace CommunityInfoSite.Controllers
         // POST: Members/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
-            MemberUser member = db.Members.Find(id);
+            Member member = db.Members.Find(id);
             db.Members.Remove(member);
             db.SaveChanges();
             return RedirectToAction("Index");

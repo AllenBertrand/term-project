@@ -10,10 +10,13 @@ namespace CommunityInfoSite.Models
     {
         public List<Message> messages = new List<Message>();
 
-        public List<Message> Messages {get{return messages;} }
+        public List<Message> Messages { get { return messages; } }
 
         public int MemberId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public int Answered { get; set; }
+        public int Correct { get; set; }
+        public int totalQuestions { get; set; }
     }
 }

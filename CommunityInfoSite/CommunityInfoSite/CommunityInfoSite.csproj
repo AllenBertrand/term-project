@@ -205,6 +205,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,9 +217,11 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberUser.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MessageViewModel.cs" />
+    <Compile Include="Models\Question.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -316,6 +319,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

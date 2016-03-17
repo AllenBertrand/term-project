@@ -653,6 +653,9 @@ C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\Lab 8\CommunityInfoSite
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\Lab 8\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.csprojResolveAssemblyReference.cache
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\Lab 8\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.dll
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\Lab 8\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.pdb
+C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.csprojResolveAssemblyReference.cache
+C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.dll
+C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.pdb
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\ApplicationInsights.config
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\roslyn\csc.exe
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -732,6 +735,3 @@ C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-mast
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.csprojResolveAssemblyReference.cache
-C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.dll
-C:\Users\Allen\Documents\SCHOOL STUFF\WINTER 2016\CS 296\TERM PROJECT\Lab-8-master\CommunityInfoSite\CommunityInfoSite\obj\Debug\CommunityInfoSite.pdb
